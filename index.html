@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet"> <!-- Google Fonts link -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div>
+        <div>
+            <h1 class="header_text">Hi Irog, it's season of love</h1>
+            <h2 class="header_text">Will you be my valentine?</h2>
+        </div>
+        
+        <div class="gif-container">
+            <img src="C:/Users/denie/Documents/Valentines/please.gif" alt="Valentine GIF">
+        </div>
+        
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function nextPage() {
+            window.location.href = "yes.html";
+        }
+
+        function moveButton() {
+            // Get the button's dimensions
+            var button = document.getElementById('noButton');
+            var buttonWidth = button.offsetWidth;
+            var buttonHeight = button.offsetHeight;
+
+            // Calculate a random position within the viewport, ensuring the button doesn't overflow
+            var x = Math.random() * (window.innerWidth - buttonWidth);
+            var y = Math.random() * (window.innerHeight - buttonHeight);
+
+            // Set the button's new position
+            button.style.position = 'absolute'; // Make sure the button can move freely
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
